@@ -1,3 +1,7 @@
 <template>
   <h1>App</h1>
 </template>
+
+<style>
+@import "style.css";
+</style>
