@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "Counter",
+  name: "VuexCounter",
   data: function () {
     return {
       count: 0,
