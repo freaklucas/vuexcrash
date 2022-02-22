@@ -1,15 +1,15 @@
 import { createStore } from "vuex";
 
-import CounterModule from "./modules/counter.module";
+import counterModule from "./modules/counter.module";
 
 export default createStore({
   state: {
-    counterState: CounterModule.state,
+    counterState: counterModule.state,
   },
   mutations: {},
   actions: {},
   modules: {
-    CounterModule,
+    counterModule,
   },
   getters: {
     getCounterState: function (state) {
