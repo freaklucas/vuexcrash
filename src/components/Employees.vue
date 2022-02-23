@@ -15,7 +15,17 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li
+            v-for="employee of employees"
+            :key="employee.id"
+            class="list-group-item list-group-item-success"
+          >
+            {{ employee.name }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +53,18 @@ export default {
           name: "Clementine Bauch",
           username: "Samantha",
           email: "Nathan@yesenia.net",
+        },
+        {
+          id: 4,
+          name: "Patricia Lebsack",
+          username: "Karianne",
+          email: "Julianne.OConner@kory.org",
+        },
+        {
+          id: 5,
+          name: "Chelsey Dietrich",
+          username: "Kamren",
+          email: "Lucio_Hettinger@annie.ca",
         },
       ],
     };
