@@ -1,10 +1,52 @@
 <template>
-  <h2>Employees</h2>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <p class="h3 text-success">Employees</p>
+        <p class="fst-italic">
+          Seja tudo o quiser ser, mas, acima de tudo, seja você sempre. Só
+          existe um êxito: a capacidade de levar a vida que se quer. A
+          vitalidade é demonstrada não apenas pela persistência, mas pela
+          capacidade de começar de novo. A coragem não é ausência do medo; é a
+          persistência apesar do medo.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6"></div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Employees",
+  data: function () {
+    return {
+      employees: [
+        {
+          id: 1,
+          name: "Leanne Graham",
+          username: "Bret",
+          email: "Sincere@april.biz",
+        },
+        {
+          id: 2,
+          name: "Ervin Howell",
+          username: "Antonette",
+          email: "Shanna@melissa.tv",
+        },
+        {
+          id: 3,
+          name: "Clementine Bauch",
+          username: "Samantha",
+          email: "Nathan@yesenia.net",
+        },
+      ],
+    };
+  },
 };
 </script>
 
