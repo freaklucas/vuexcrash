@@ -31,6 +31,29 @@
           </li>
         </ul>
       </div>
+      <div class="col-md-6">
+        <div>
+          <div
+            class="card my-2"
+            v-for="employee of employees"
+            :key="employee.id"
+          >
+            <div class="card-body list-group-item-success">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Id: <span class="fw-bold">{{ employee.id }}</span>
+                </li>
+                <li class="list-group-item">
+                  Name: <span class="fw-bold">{{ employee.name }}</span>
+                </li>
+                <li class="list-group-item">
+                  E-mail: <span class="fw-bold">{{ employee.email }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
