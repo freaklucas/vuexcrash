@@ -22,7 +22,11 @@
             :key="employee.id"
             class="list-group-item list-group-item-success"
           >
-            <input type="checkbox" class="form-check-input" />
+            <input
+              @change="updateSelected(employee.id)"
+              type="checkbox"
+              class="form-check-input"
+            />
             {{ employee.name }}
           </li>
         </ul>
@@ -76,10 +80,19 @@ export default {
     };
   },
   methods: {
-    updateSelected: function () {},
+    updateSelected: function (empId) {
+      this.employees = this.employees.map((employee) => {
+        if (employee.id === empId) {
+          return {
+            ...employee,
+            isSelected: !employee.isSelected,
+          };
+        } else return employee;
+      });
+    },
   },
 };
-</script>
+</script>     
 
 <style>
 </style>
