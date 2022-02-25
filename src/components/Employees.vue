@@ -32,12 +32,8 @@
         </ul>
       </div>
       <div class="col-md-6">
-        <div>
-          <div
-            class="card my-2"
-            v-for="employee of employees"
-            :key="employee.id"
-          >
+        <div v-for="employee of employees" :key="employee.id">
+          <div class="card my-2" v-if="employee.isSelected">
             <div class="card-body list-group-item-success">
               <ul class="list-group">
                 <li class="list-group-item">
