@@ -56,7 +56,7 @@
 
 <script>
 export default {
-  name: "Employees",
+  name: "VuexEmployees",
   data: function () {
     return {
       employees: [
