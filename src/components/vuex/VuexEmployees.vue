@@ -64,7 +64,18 @@ export default {
       employees: EmployeeService.getAllEmployees(),
     };
   },
-  methods: {},
+  methods: {
+    updateSelected: function (empId) {
+      this.employees = this.employees.map((employee) => {
+        if (employee.id === empId) {
+          return {
+            ...employee,
+            isSelected: !employee.isSelected,
+          };
+        } else return employee;
+      });
+    },
+  },
 };
 </script>     
 
