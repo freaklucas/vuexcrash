@@ -19,11 +19,11 @@
         <div class="card shadow-lg">
           <div class="card-body">
             <p class="h3 display-3">{{ counterState.count }}</p>
-            <button @click="clickIncrement" class="btn btn-success m-1">
-              Increment
-            </button>
             <button @click="clickDecrement" class="btn btn-warning m-1">
               Decrement
+            </button>
+            <button @click="clickIncrement" class="btn btn-success m-1">
+              Increment
             </button>
             <button @click="clickIncrementBy(5)" class="btn btn-danger m-1">
               Increment by
