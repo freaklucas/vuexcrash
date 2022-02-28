@@ -23,6 +23,7 @@
             class="list-group-item list-group-item-success"
           >
             <input
+              :checked="employee.isSelected"
               @change="updateSelected(employee.id)"
               type="checkbox"
               class="form-check-input"
@@ -55,22 +56,20 @@
 </template>
 
 <script>
-
 import { mapGetters } from "vuex";
 
 export default {
   name: "VuexEmployees",
-    methods: {
+  methods: {
     updateSelected: function (empId) {
       this.$store.dispatch("employeeModule/changeSelected", {
-        empId: empId
+        empId: empId,
       });
     },
   },
   computed: mapGetters({
-    employeeState : "getEmployeeState"
-  })
-
+    employeeState: "getEmployeeState",
+  }),
 };
 </script>     
 
