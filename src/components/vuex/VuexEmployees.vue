@@ -18,7 +18,7 @@
       <div class="col-md-6">
         <ul class="list-group">
           <li
-            v-for="employee of employees"
+            v-for="employee of employeeState.employees"
             :key="employee.id"
             class="list-group-item list-group-item-success"
           >
@@ -32,7 +32,7 @@
         </ul>
       </div>
       <div class="col-md-6">
-        <div v-for="employee of employees" :key="employee.id">
+        <div v-for="employee of employeeState.employees" :key="employee.id">
           <div class="card my-2" v-if="employee.isSelected">
             <div class="card-body list-group-item-success">
               <ul class="list-group">
@@ -55,27 +55,22 @@
 </template>
 
 <script>
-import { EmployeeService } from "../../services/EmployeeService";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "VuexEmployees",
-  data: function () {
-    return {
-      employees: EmployeeService.getAllEmployees(),
-    };
-  },
-  methods: {
+    methods: {
     updateSelected: function (empId) {
-      this.employees = this.employees.map((employee) => {
-        if (employee.id === empId) {
-          return {
-            ...employee,
-            isSelected: !employee.isSelected,
-          };
-        } else return employee;
+      this.$store.dispatch("employeeModule/changeSelected", {
+        empId: empId
       });
     },
   },
+  computed: mapGetters({
+    employeeState : "getEmployeeState"
+  })
+
 };
 </script>     
 
