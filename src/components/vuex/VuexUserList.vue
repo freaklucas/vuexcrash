@@ -61,10 +61,10 @@
 
 <script>
 import axios from "axios";
-import Spinner from "../components/Spinner.vue";
+import Spinner from "../Spinner.vue";
 
 export default {
-  name: "UserList",
+  name: "VuexUserList",
   components: { Spinner },
   data: function () {
     return {

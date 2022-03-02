@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import VuexCounter from "../components/vuex/VuexCounter.vue";
 import VuexEmployees from "../components/vuex/VuexEmployees.vue";
-import UserList from "../components/UserList.vue";
+import VuexUserList from "../components/vuex/VuexUserList.vue";
 
 const routes = [
   {
@@ -23,8 +23,8 @@ const routes = [
   },
   {
     path: "/users",
-    name: "UserList",
-    component: UserList,
+    name: "VuexUserList",
+    component: VuexUserList,
   },
 ];
 
