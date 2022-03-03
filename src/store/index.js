@@ -24,5 +24,8 @@ export default createStore({
     getEmployeeState: function (state) {
       return state.employeeState.employeeList;
     },
+    getUsersState: function (state) {
+      return state.usersState.userList;
+    },
   },
 });

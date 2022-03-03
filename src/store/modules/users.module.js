@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export default {
   namespaced: true,
   state: {
@@ -20,5 +22,18 @@ export default {
       state.userList.errorMessage = payload.error;
     },
   },
-  actions: {},
+  actions: {
+    getUsers: async function ({ commit }) {
+      try {
+        commit("GET_USERS_REQUEST");
+        let dataURL = `https://jsonplaceholder.typicode.com/users`;
+        let response = await axios.get(dataURL);
+
+        commit("GET_USERS_SUCCESS", { users: response.data });
+        // console.log(response.data);
+      } catch (error) {
+        commit("GET_USERS_FAILED", { error: error });
+      }
+    },
+  },
 };
