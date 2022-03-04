@@ -63,16 +63,11 @@
 import axios from "axios";
 import Spinner from "../Spinner.vue";
 
+import mapGetters from "vuex";
+
 export default {
   name: "VuexUserList",
   components: { Spinner },
-  data: function () {
-    return {
-      loading: false,
-      users: [],
-      errorMessage: null,
-    };
-  },
   created: async function () {
     try {
       this.loading = true;
@@ -88,6 +83,9 @@ export default {
       this.errorMessage = error;
     }
   },
+  computed: mapGetters({
+    usersState: "getUsersState",
+  }),
 };
 </script>
 
