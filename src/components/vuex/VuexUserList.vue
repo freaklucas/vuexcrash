@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="container" v-if="loading">
+  <div class="container" v-if="userState.loading">
     <div class="row">
       <div class="col">
         <Spinner />
@@ -19,17 +19,20 @@
     </div>
   </div>
 
-  <div class="container" v-if="!loading && errorMessage">
+  <div class="container" v-if="!userState.loading && userState.errorMessage">
     <div class="row">
       <div class="col">
         <p class="fw-bold text-danger">
-          {{ errorMessage }}
+          {{ userState.errorMessage }}
         </p>
       </div>
     </div>
   </div>
 
-  <div v-if="!loading && users.length > 0" class="container">
+  <div
+    v-if="!userState.loading && userState.users.length > 0"
+    class="container"
+  >
     <div class="row">
       <div class="col">
         <table class="table table-hover text-center table-striped">
@@ -44,7 +47,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="user in users" :key="user.id">
+            <tr v-for="user in userState.users" :key="user.id">
               <td>{{ user.id }}</td>
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>
