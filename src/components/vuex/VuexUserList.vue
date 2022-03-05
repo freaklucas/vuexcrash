@@ -63,31 +63,18 @@
 </template>
 
 <script>
-import axios from "axios";
 import Spinner from "../Spinner.vue";
 
-import mapGetters from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "VuexUserList",
   components: { Spinner },
-  created: async function () {
-    try {
-      this.loading = true;
-
-      let dataURL = `https://jsonplaceholder.typicode.com/users`;
-      let response = await axios.get(dataURL);
-
-      this.users = response.data;
-      this.loading = false;
-      // console.log(response.data);
-    } catch (error) {
-      this.loading = false;
-      this.errorMessage = error;
-    }
+  created: function () {
+    this.$store.dispatch("usersModule/getUsers");
   },
   computed: mapGetters({
-    usersState: "getUsersState",
+    userState: "getUsersState",
   }),
 };
 </script>
